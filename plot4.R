@@ -21,5 +21,5 @@ legend("top", pch = 95, col = c("black", "red", "blue"), legend = c("Sub_meterin
 #graph 4
 with(rawData, plot(strptime(paste(rawData$Date, rawData$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), rawData$Global_reactive_power, type="l", ylab = "voltage", xlab="datetime"))
 
-dev.copy(png, file="figure/plot4.png", width = 480, height = 480)
+dev.copy(png, file="plot4.png", width = 480, height = 480)
 dev.off()

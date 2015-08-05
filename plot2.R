@@ -7,5 +7,5 @@ par(family = "sans", mar = c(5,7,4,2))
 
 ## line graph
 with(rawData, plot(strptime(paste(rawData$Date, rawData$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), Global_active_power, type="l", ylab = "Global Active Power (killowatts)", xlab=""))
-dev.copy(png, file="figure/plot2.png", width = 480, height = 480)
+dev.copy(png, file="plot2.png", width = 480, height = 480)
 dev.off()
