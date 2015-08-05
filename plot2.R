@@ -5,7 +5,7 @@ rawData <- read.csv(pipe("awk 'BEGIN {FS=\";\"} {if (($1 == \"1/2/2007\") || ($1
 ## setting plot params
 par(family = "sans", mar = c(5,7,4,2))
 
-## plotting histogram of Global Active Power
-hist(as.numeric(rawData$Global_active_power), col = "red", main = "Global Active Power", xlab = "Global Active Power (killowatts)")
-dev.copy(png, file="figure/plot1.png", width = 480, height = 480)
+## line graph
+with(rawData, plot(strptime(paste(rawData$Date, rawData$Time, sep=" "), format="%d/%m/%Y %H:%M:%S"), Global_active_power, type="l", ylab = "Global Active Power (killowatts)", xlab=""))
+dev.copy(png, file="figure/plot2.png", width = 480, height = 480)
 dev.off()
